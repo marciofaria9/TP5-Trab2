@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -9,7 +12,11 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        FormsModule,
+        RouterLink,
+        AppRoutingModule
+
       ],
     }).compileComponents();
   });
