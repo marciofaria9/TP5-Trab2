@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   publicKey: 'c83f0ed3e2c41fc8b24bbdc02b858a98' ,
-  hash: "",
+  hash: "95ad4d6fdaeac95e69b0b5353e74655a",
 
   // URLs para acessar 
   
