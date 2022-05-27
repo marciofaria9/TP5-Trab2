@@ -1,5 +1,7 @@
 <h1>Personagens</h1>
 
+<input type="button" value="Clique Para listar os Personagens" (click)="loadCharacteres()">
+
 <ul *ngFor="let char of characterList">
     <li> {{char.name }} </li>
     <li> {{char.description}} </li>

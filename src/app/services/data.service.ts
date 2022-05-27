@@ -1,29 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Model } from '../models/Model';
-import { RequestApi } from '../models/requestApi';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  aux:any;
+  model: Model = {} as Model 
   constructor(private http:HttpClient) { }
 
-  getData(){
-    this.aux = fetch(`${environment.URLCaracter}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=10`
+  getData(url: string){
+    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=10`
     ).then((response) =>{
        return response.json();
     }).then((jsonPased) =>{
-      
-      return jsonPased
+      for(let i = 0; i < jsonPased.data.results.lenght ; i++){
+        console.log(i)
+      }
+      this.model.name = jsonPased.data.results[0].name
     })
-    return this.aux
   }
   
+  loadData(){    
+    return this.model
+  }
 }
 
