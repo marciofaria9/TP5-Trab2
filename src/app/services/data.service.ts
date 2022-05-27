@@ -14,7 +14,7 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   getData(){
-    fetch(`${environment.URLCaracter}1565045589&apikey${environment.publicKey}&hash${environment.hash}&limit=6`
+    fetch(`${environment.URLCaracter}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=6`
     ).then((response) =>{
       return response.json();
     }).then((jsonPased) =>{
