@@ -29,7 +29,6 @@ export class CharactersComponent implements OnInit {
       this.characterList.push(this.newCharacter)
       this.newCharacter = {} as Model
     })
-       
   }
 
 }

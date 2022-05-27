@@ -19,10 +19,12 @@ export class DataService {
     ).then((response) =>{
        return response.json();
     }).then((jsonPased) =>{
+      console.log(jsonPased)
       for(let i = 0; i < jsonPased.data.results.length ; i++){
           this.model = jsonPased.data.results[i]
           this.modelList.push(this.model)
           this.model = {} as Model
+          console.log(i)
       }
      
     })
