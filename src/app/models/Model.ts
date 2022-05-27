@@ -5,7 +5,6 @@ export interface Model{
  description: string
  resourceURI: string
  thumbnail: any
- data: DataModel
 }
 
 export interface DataModel{

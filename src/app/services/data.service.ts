@@ -11,15 +11,18 @@ import { RequestApi } from '../models/requestApi';
 })
 export class DataService {
 
+  aux:any;
   constructor(private http:HttpClient) { }
 
   getData(){
-    fetch(`${environment.URLCaracter}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=6`
+    this.aux = fetch(`${environment.URLCaracter}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=10`
     ).then((response) =>{
-      return response.json();
+       return response.json();
     }).then((jsonPased) =>{
-      console.log(jsonPased)
+      
+      return jsonPased
     })
+    return this.aux
   }
   
 }
