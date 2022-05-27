@@ -1,1 +1,8 @@
-<p>events works!</p>
+<h1>Events</h1>
+
+ <input type="button" value="Clique Para listar os Eventos" (click)="loadEvents()"> 
+
+<ul *ngFor="let event of eventList">
+    <li> {{event.title }} </li>
+    <li> {{event.description}} </li>
+</ul>

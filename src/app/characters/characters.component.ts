@@ -12,6 +12,7 @@ export class CharactersComponent implements OnInit {
   
   newCharacter : Model = {} as Model
   characterList : Model []=[]
+  modelList: Model[]=[]
 
   constructor(private service: DataService) { }
 
@@ -20,9 +21,15 @@ export class CharactersComponent implements OnInit {
   }
 
   loadCharacteres(){
-    this.newCharacter = this.service.loadData()
-    this.characterList.push(this.newCharacter)
-    this.newCharacter = {} as Model
+    this.modelList = this.service.loadData()
+    console.log(this.modelList)
+    this.modelList.forEach(model =>{
+      this.newCharacter.name = model.name
+      this.newCharacter.description = model.description
+      this.characterList.push(this.newCharacter)
+      this.newCharacter = {} as Model
+    })
+       
   }
 
 }

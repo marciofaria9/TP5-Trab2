@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -9,23 +9,27 @@ import { Model } from '../models/Model';
 })
 export class DataService {
 
-  model: Model = {} as Model 
-  constructor(private http:HttpClient) { }
+  model: Model = {} as Model
+  modelList : Model [] = [] 
+  constructor() { }
 
   getData(url: string){
-    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=10`
+    this.modelList = []
+    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=100`
     ).then((response) =>{
        return response.json();
     }).then((jsonPased) =>{
-      for(let i = 0; i < jsonPased.data.results.lenght ; i++){
-        console.log(i)
+      for(let i = 0; i < jsonPased.data.results.length ; i++){
+          this.model = jsonPased.data.results[i]
+          this.modelList.push(this.model)
+          this.model = {} as Model
       }
-      this.model.name = jsonPased.data.results[0].name
+     
     })
   }
   
-  loadData(){    
-    return this.model
+  loadData(){        
+    return this.modelList
   }
 }
 

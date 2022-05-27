@@ -1,16 +1,10 @@
 export interface Model{
 
- id: number
- name: string
- description: string
- resourceURI: string
- thumbnail: any
+ id?: number
+ name?: string
+ title?: string
+ description?: string
+ resourceURI?: string
+ thumbnail?: any
 }
 
-export interface DataModel{
-    offset: number
-    limit: number
-    total: number
-    count: number
-    results: any[]
-}

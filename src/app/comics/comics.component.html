@@ -1,1 +1,8 @@
-<p>comics works!</p>
+<h1>Comics</h1>
+
+ <input type="button" value="Clique Para listar os Quadrinhos" (click)="loadComics()"> 
+
+<ul *ngFor="let comic of comicList">
+    <li> {{comic.title }} </li>
+    <li> {{comic.description}} </li>
+</ul>

@@ -11,10 +11,10 @@ export const environment = {
   // URLs para acessar 
   
   URLCaracter: 'https://gateway.marvel.com/v1/public/characters?ts=',
-  URLComics:  'https://gateway.marvel.com/v1/public/comics?=ts',
-  URLEvents:  'https://gateway.marvel.com/v1/public/events?=ts',
-  URLSeries:  'https://gateway.marvel.com/v1/public/series?=ts',
-  URLStories:  'https://gateway.marvel.com/v1/public/stories?=ts'
+  URLComics:  'https://gateway.marvel.com/v1/public/comics?ts=',
+  URLEvents:  'https://gateway.marvel.com/v1/public/events?ts=',
+  URLSeries:  'https://gateway.marvel.com/v1/public/series?ts=',
+  URLStories:  'https://gateway.marvel.com/v1/public/stories?ts='
 };
 
 /*
