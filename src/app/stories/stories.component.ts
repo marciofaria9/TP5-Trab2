@@ -18,6 +18,9 @@ export class StoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getData(environment.URLStories)
+    setTimeout(()=>{ 
+      this.loadStories()
+    }, 3000);
   }
 
   loadStories(){

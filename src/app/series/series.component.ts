@@ -18,6 +18,9 @@ export class SeriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getData(environment.URLSeries)
+    setTimeout(()=>{ 
+      this.loadSeries()
+    }, 3000);
   }
 
   loadSeries(){

@@ -18,6 +18,9 @@ export class ComicsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getData(environment.URLComics)
+    setTimeout(()=>{ 
+      this.loadComics()
+    }, 3000);
   }
 
   loadComics(){

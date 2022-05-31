@@ -18,7 +18,9 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getData(environment.URLEvents)
-    console.log("passei aqui")
+    setTimeout(()=>{ 
+      this.loadEvents()
+    }, 3000);
   }
 
   loadEvents(){

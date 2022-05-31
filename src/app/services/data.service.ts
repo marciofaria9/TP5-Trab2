@@ -1,8 +1,9 @@
 
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 import { Model } from '../models/Model';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,15 @@ import { Model } from '../models/Model';
 export class DataService {
 
   model: Model = {} as Model
-  modelList : Model [] = [] 
+  modelList : Model [] = []
+  offset = 0
+
   constructor() { }
 
   getData(url: string){
     this.modelList = []
-    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=100`
+   
+    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=100&offset=${this.offset}`
     ).then((response) =>{
        return response.json();
     }).then((jsonPased) =>{
@@ -26,12 +30,13 @@ export class DataService {
           this.model = {} as Model
           console.log(i)
       }
-     
+      //this.offset = this.offset + 100
     })
   }
   
   loadData(){        
     return this.modelList
+    
   }
 }
 
