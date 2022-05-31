@@ -23,25 +23,14 @@ export class CharacterService {
        return response.json();
     }).then((jsonPased) =>{
       console.log(jsonPased)
-    
-      if(offset===0){
+        
         for(let i = 0; i < jsonPased.data.results.length ; i++){
           this.model = jsonPased.data.results[i]
           this.modelList.push(this.model)
           this.model = {} as Model
           console.log(i)
         }
-      }else{
-        console.log(offset)
-        for(offset; offset < jsonPased.data.results.length ; offset++){
-          this.model = jsonPased.data.results[offset]
-          this.modelList.push(this.model)
-          this.model = {} as Model
-          
-      }
-      }
-
-      
+            
     })
   }
 

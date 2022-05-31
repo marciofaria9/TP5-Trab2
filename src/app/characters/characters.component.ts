@@ -19,14 +19,18 @@ export class CharactersComponent implements OnInit {
   constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-    this.service.getCharacter(environment.URLCaracter, (0 * this.mult))
+   // for(let i = 0; i < 16; i++){
+      this.service.getCharacter(environment.URLCaracter, (0 * this.mult))
     setTimeout(()=>{ 
       this.loadCharacteres()
-    }, 3000);
+    }, 1000);
     this.service.getCharacter(environment.URLCaracter, (1 * this.mult))
     setTimeout(()=>{ 
       this.loadCharacteres()
-    }, 3000);
+    }, 2000);
+    
+    //}
+    
   }
 
   loadCharacteres(){
