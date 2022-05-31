@@ -9,28 +9,39 @@ export class CharacterService {
 
   model: Model = {} as Model
   modelList : Model [] = []
-  offset = 0
-
+  
   constructor() { }
 
-  getCharacter(url: string){
-    if (this.offset = 0){
+  getCharacter(url: string, offset: number){
+    if (offset === 0){
       this.modelList = []
     }
     
-    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=100&offset=${this.offset}`
+    console.log(offset)
+    fetch(`${url}${environment.timestamp}&apikey=${environment.publicKey}&hash=${environment.hash}&limit=100&offset=${offset}`
     ).then((response) =>{
        return response.json();
     }).then((jsonPased) =>{
       console.log(jsonPased)
     
-      for(let i = 0; i < jsonPased.data.results.length ; i++){
-          this.model = jsonPased.data.results[i + this.offset]
+      if(offset===0){
+        for(let i = 0; i < jsonPased.data.results.length ; i++){
+          this.model = jsonPased.data.results[i]
           this.modelList.push(this.model)
           this.model = {} as Model
           console.log(i)
+        }
+      }else{
+        console.log(offset)
+        for(offset; offset < jsonPased.data.results.length ; offset++){
+          this.model = jsonPased.data.results[offset]
+          this.modelList.push(this.model)
+          this.model = {} as Model
+          
       }
-      this.offset = this.offset + 100
+      }
+
+      
     })
   }
 

@@ -13,17 +13,20 @@ export class CharactersComponent implements OnInit {
   newCharacter : Model = {} as Model
   characterList : Model []=[]
   modelList: Model[]=[]
-  i = 0
-  max = 5;
+  offset = 0;
+  mult = 100; 
 
   constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-    this.service.getCharacter(environment.URLCaracter)
+    this.service.getCharacter(environment.URLCaracter, (0 * this.mult))
     setTimeout(()=>{ 
       this.loadCharacteres()
     }, 3000);
- 
+    this.service.getCharacter(environment.URLCaracter, (1 * this.mult))
+    setTimeout(()=>{ 
+      this.loadCharacteres()
+    }, 3000);
   }
 
   loadCharacteres(){
@@ -34,6 +37,7 @@ export class CharactersComponent implements OnInit {
       this.newCharacter.description = model.description
       this.characterList.push(this.newCharacter)
       this.newCharacter = {} as Model
+      
     })
   }
 
