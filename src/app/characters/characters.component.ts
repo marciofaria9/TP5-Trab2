@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Model } from '../models/Model';
-import { DataService } from '../services/data.service';
-import { timeout } from 'rxjs';
+import { CharacterService } from './character.service';
 
 @Component({
   selector: 'app-characters',
@@ -17,25 +16,24 @@ export class CharactersComponent implements OnInit {
   i = 0
   max = 5;
 
-  constructor(private service: DataService) { }
+  constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-    this.service.getData(environment.URLCaracter)
+    this.service.getCharacter(environment.URLCaracter)
     setTimeout(()=>{ 
       this.loadCharacteres()
     }, 3000);
-    
+ 
   }
 
   loadCharacteres(){
-    this.modelList = this.service.loadData()
+    this.modelList = this.service.loadCharacter()
     console.log(this.modelList)
     this.modelList.forEach(model =>{
       this.newCharacter.name = model.name
       this.newCharacter.description = model.description
       this.characterList.push(this.newCharacter)
       this.newCharacter = {} as Model
-      console.timeLog("passou aqui")
     })
   }
 
