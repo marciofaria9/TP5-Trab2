@@ -10,6 +10,7 @@ import { CharacterService } from './character.service';
 })
 export class CharactersComponent implements OnInit {
   
+  i = 0;
   newCharacter : Model = {} as Model
   characterList : Model []=[]
   modelList: Model[]=[]
@@ -19,18 +20,9 @@ export class CharactersComponent implements OnInit {
   constructor(private service: CharacterService) { }
 
   ngOnInit(): void {
-   // for(let i = 0; i < 16; i++){
-      this.service.getCharacter(environment.URLCaracter, (0 * this.mult))
-    setTimeout(()=>{ 
-      this.loadCharacteres()
-    }, 1000);
-    this.service.getCharacter(environment.URLCaracter, (1 * this.mult))
-    setTimeout(()=>{ 
-      this.loadCharacteres()
-    }, 2000);
     
-    //}
-    
+    this.loadPage()
+
   }
 
   loadCharacteres(){
@@ -39,12 +31,25 @@ export class CharactersComponent implements OnInit {
     this.modelList.forEach(model =>{
       this.newCharacter.name = model.name
       this.newCharacter.description = model.description
+      console.log(this.newCharacter.thumbnail?.path)
+     // this.newCharacter.image = `${this.newCharacter.thumbnail?.path}.${this.newCharacter.thumbnail?.extension}`
       this.characterList.push(this.newCharacter)
       this.newCharacter = {} as Model
       
     })
   }
 
- 
+  loadPage(){
+    
+    if(this.i < 17){
+      setTimeout(()=>{
+        this.service.getCharacter(environment.URLCaracter, (this.i * this.mult))
+        this.i =  this.i+1
+        this.loadCharacteres() 
+        console.log("Segundo " + this.i)
+        this.loadPage()
+      }, 3000);
+    }
+  }
   
 }

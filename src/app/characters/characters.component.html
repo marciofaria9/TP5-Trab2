@@ -3,4 +3,7 @@
 <ul *ngFor="let char of characterList">
     <li> {{char.name }} </li>
     <li> {{char.description}} </li>
+    <div>
+        <img [src]="char.image">
+    </div>
 </ul>

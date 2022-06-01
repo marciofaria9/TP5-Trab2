@@ -1,3 +1,5 @@
+import { Thumbnail } from "./Thumbnail"
+
 export interface Model{
 
  id?: number
@@ -5,6 +7,8 @@ export interface Model{
  title?: string
  description?: string
  resourceURI?: string
- thumbnail?: any
+ thumbnail?: Thumbnail
+ image?:string
+
 }
 
