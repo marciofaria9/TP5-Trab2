@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    font-family: fantasy;
+    color: rgb(201, 12, 12);
+    margin: 40px;
+}
+
+#title {
+    padding: 3px;
+    font-family: fantasy;
+    color: rgb(3, 3, 70);
+}
+
+#desc {
+    font-family: sans-serif;
+    color: grey;
+    padding-bottom: 10px;
+
+}
+
+#img {
+    width: 500px;
+    height: 400px;
+}
+
+.content {
+    text-align: center;
+}
+
+ul li {
+    list-style: none
+}

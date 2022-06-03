@@ -1,4 +1,12 @@
+<div class="content">
 <h1>Series</h1>
+<div *ngFor="let serie of seriesList">
+    <img id="image"[src]="serie.image" >
+    <div class="card-body">
+      <h5 id="title"> {{serie.title }}</h5>
+    </div>
+</div>
+</div>
 
 <!--   <ul *ngFor="let serie of seriesList">
     <li> {{serie.title }} </li>
@@ -7,9 +15,3 @@
     </div>
 </ul>
 -->
-<div *ngFor="let serie of seriesList" class="card" style="width: 18rem;">
-    <img [src]="serie.image" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"> {{serie.title }}</h5>
-    </div>
-</div>

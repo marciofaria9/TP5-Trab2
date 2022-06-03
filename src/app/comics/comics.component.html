@@ -1,8 +1,9 @@
 <h1>Comics</h1>
-
+<div class = content>
 <ul *ngFor="let comic of comicList">
-    <li> {{comic.title }} </li>
+    <li id="title"> {{comic.title }} </li>
     <div>
-        <img [src]="comic.image">
+        <img id="img"[src]="comic.image">
     </div>
 </ul>
+</div>

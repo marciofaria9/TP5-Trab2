@@ -1,9 +1,10 @@
 <h1>Personagens</h1>
-
+<div class = content>
 <ul *ngFor="let char of characterList">
-    <li> {{char.name }} </li>
-    <li> {{char.description}} </li>
+    <li id="title"> {{char.name }} </li>
+    <li id="desc"> {{char.description}} </li>
     <div>
-        <img [src]="char.image">
+        <img id="img"[src]="char.image">
     </div>
 </ul>
+</div>
