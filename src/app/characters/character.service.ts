@@ -27,11 +27,12 @@ export class CharacterService {
           this.model = {} as Model
 
         }
-      
+       
     })
   }
 
   loadCharacter(){
+    
     return this.modelList
   }
 }

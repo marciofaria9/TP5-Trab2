@@ -9,6 +9,8 @@ export interface Model{
  resourceURI?: string
  thumbnail?: Thumbnail
  image?:string
-
+ path?: string
+ extension?: string
+ 
 }
 

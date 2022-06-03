@@ -14,7 +14,6 @@ export class CharactersComponent implements OnInit {
   newCharacter : Model = {} as Model
   characterList : Model []=[]
   modelList: Model[]=[]
-  offset = 0;
   mult = 100; 
 
   constructor(private service: CharacterService) { }
@@ -29,10 +28,8 @@ export class CharactersComponent implements OnInit {
     this.modelList = this.service.loadCharacter()
     console.log(this.modelList)
     this.modelList.forEach(model =>{
-      this.newCharacter.name = model.name
-      this.newCharacter.description = model.description
-      console.log(this.newCharacter.thumbnail?.path)
-     // this.newCharacter.image = `${this.newCharacter.thumbnail?.path}.${this.newCharacter.thumbnail?.extension}`
+      this.newCharacter = model      
+      this.newCharacter.image = `${model.thumbnail?.path}.${model.thumbnail?.extension}`
       this.characterList.push(this.newCharacter)
       this.newCharacter = {} as Model
       
@@ -42,9 +39,9 @@ export class CharactersComponent implements OnInit {
   loadPage(){
     
     if(this.i < 17){
+      this.service.getCharacter(environment.URLCaracter, (this.i * this.mult))
       setTimeout(()=>{
-        this.service.getCharacter(environment.URLCaracter, (this.i * this.mult))
-        this.i =  this.i+1
+        this.i++
         this.loadCharacteres() 
         console.log("Segundo " + this.i)
         this.loadPage()

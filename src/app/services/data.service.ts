@@ -34,7 +34,8 @@ export class DataService {
     })
   }
   
-  loadData(){        
+  loadData(){
+        
     return this.modelList    
   }
 }
