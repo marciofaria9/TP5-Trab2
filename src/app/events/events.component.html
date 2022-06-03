@@ -4,7 +4,9 @@
 
 <ul *ngFor="let event of eventList">
     <li> {{event.title }} </li>
-    <li> {{event.description}} </li>
+    <div>
+        <img [src]="event.image">
+    </div>
 </ul>
 
 <h1>

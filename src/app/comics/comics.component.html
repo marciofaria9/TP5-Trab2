@@ -2,5 +2,7 @@
 
 <ul *ngFor="let comic of comicList">
     <li> {{comic.title }} </li>
-    <li> {{comic.description}} </li>
+    <div>
+        <img [src]="comic.image">
+    </div>
 </ul>

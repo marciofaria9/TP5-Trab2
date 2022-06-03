@@ -27,8 +27,8 @@ export class SeriesComponent implements OnInit {
     this.modelList = this.service.loadData()
     console.log(this.modelList)
     this.modelList.forEach(model =>{
-      this.newSerie.title = model.title
-      this.newSerie.description = model.description
+      this.newSerie = model
+      this.newSerie.image = `${model.thumbnail?.path}.${model.thumbnail?.extension}`
       this.seriesList.push(this.newSerie)
       this.newSerie = {} as Model
     })

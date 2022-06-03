@@ -27,8 +27,8 @@ export class EventsComponent implements OnInit {
     this.modelList = this.service.loadData()
     console.log(this.modelList)
     this.modelList.forEach(model =>{
-      this.newEvent.title = model.title
-      this.newEvent.description = model.description
+      this.newEvent= model
+      this.newEvent.image = `${model.thumbnail?.path}.${model.thumbnail?.extension}`
       this.eventList.push(this.newEvent)
       this.newEvent = {} as Model
     })

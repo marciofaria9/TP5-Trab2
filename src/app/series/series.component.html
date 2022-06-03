@@ -2,6 +2,8 @@
 
 <ul *ngFor="let serie of seriesList">
     <li> {{serie.title }} </li>
-    <li> {{serie.description}} </li>
+    <div>
+        <img [src]="serie.image">
+    </div>
 </ul>
 

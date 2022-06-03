@@ -27,8 +27,8 @@ export class ComicsComponent implements OnInit {
     this.modelList = this.service.loadData()
     console.log(this.modelList)
     this.modelList.forEach(model =>{
-      this.newComic.title = model.title
-      this.newComic.description = model.description
+      this.newComic = model
+      this.newComic.image = `${model.thumbnail?.path}.${model.thumbnail?.extension}`
       this.comicList.push(this.newComic)
       this.newComic = {} as Model
     })
