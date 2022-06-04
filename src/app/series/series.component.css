@@ -5,7 +5,7 @@
 .row {
     
     border-radius: 15px;
-    padding : 15px;
+    padding : 50px;
     justify-content: space-evenly;
   }
 
@@ -37,8 +37,4 @@ ul li {
     color: rgb(3, 3, 70);
 }
 
-#image{
-    width: 500px;
-    height: 350px;
-}
 
