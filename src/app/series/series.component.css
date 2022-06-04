@@ -1,8 +1,5 @@
 .content {
     text-align: center;
-    padding: 15px;
-    background-color: aqua;
-    
 }
 
 .row {
@@ -19,7 +16,7 @@
   }
 
 .card{
-   background-color: rgba(146, 111, 111, 0.411);
+   background-color: rgba(206, 20, 20, 0.411);
    margin-bottom: 20px;
 }
 

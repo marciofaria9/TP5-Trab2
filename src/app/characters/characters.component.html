@@ -1,10 +1,12 @@
-<h1>Personagens</h1>
-<div class = content>
-<ul *ngFor="let char of characterList">
-    <li id="title"> {{char.name }} </li>
-    <li id="desc"> {{char.description}} </li>
-    <div>
-        <img id="img"[src]="char.image">
+<div class="content"  class="row blur" >
+    <h1>Personagens</h1>
+    <div *ngFor="let char of characterList" class="card" style="width: 18rem;">
+        <div class="inner"> 
+
+            <img [src]="char.image" class="card-img">
+            <div class="card-body">
+                <h5 id="title" class="card-title">{{ char.name }}</h5>
+            </div>
+        </div>
     </div>
-</ul>
 </div>

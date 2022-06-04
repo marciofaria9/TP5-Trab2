@@ -1,6 +1,9 @@
 <h1>Stories</h1>
 
-<ul *ngFor="let storie of storiesList; let i = index">
-   <li id="storie"> Storie {{i+1}} </li>
-   <li id="title"> {{storie.title}} </li>
- </ul>
+<div>
+  <ul *ngFor="let storie of storiesList; let i = index" class="card">
+    <li id="storie"> Storie {{i+1}} </li>
+    <li id="title"> {{storie.title}} </li>
+  </ul>
+</div>
+ 

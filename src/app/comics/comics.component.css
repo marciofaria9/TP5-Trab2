@@ -5,6 +5,29 @@ h1 {
     margin: 40px;
 }
 
+.content {
+    text-align: center;
+}
+
+.row {
+    
+    border-radius: 15px;
+    padding : 15px;
+    justify-content: space-evenly;
+  }
+
+.blur {
+    
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+  }
+
+.card{
+   background-color: rgba(206, 20, 20, 0.411);
+   margin-bottom: 20px;
+}
+
+
 ul li {
     list-style: none
 }

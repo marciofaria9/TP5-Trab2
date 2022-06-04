@@ -18,3 +18,14 @@ ul li {
 #storie{
     color: rgb(248, 6, 6);
 }
+
+.content {
+    text-align: center;
+}
+
+.card{
+   background-color: rgba(206, 20, 20, 0.411);
+   margin: 20px;
+   padding : 15px;
+   justify-content: space-evenly;
+}

@@ -1,9 +1,13 @@
-<h1>Comics</h1>
-<div class = content>
-<ul *ngFor="let comic of comicList">
-    <li id="title"> {{comic.title }} </li>
-    <div>
-        <img id="img"[src]="comic.image">
+
+<div class="content"  class="row blur" >
+    <h1>Comics</h1>
+    <div *ngFor="let comic of comicList" class="card" style="width: 18rem;">
+        <div class="inner"> 
+
+            <img [src]="comic.image" class="card-img">
+            <div class="card-body">
+                <h5 id="title" class="card-title">{{ comic.title }}</h5>
+            </div>
+        </div>
     </div>
-</ul>
 </div>
